@@ -2,7 +2,7 @@ package model.service;
 
 public class Counter implements AutoCloseable {
 
-    static int count = 0;
+    private static int count = 0;
     private boolean isClosed = false;
 
     public void add() {

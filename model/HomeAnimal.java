@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class HomeAnimal extends Animal {
 
-    protected HomeAnimalClass animalClass;
+    private HomeAnimalClass animalClass;
 
     public enum HomeAnimalClass {
         CAT, DOG, HAMSTER;

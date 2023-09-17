@@ -8,9 +8,9 @@ import view.commands.*;
 import java.util.ArrayList;
 
 public class Menu {
-    protected ArrayList<Command> menu;
-    protected View view;
-    protected Presenter presenter;
+    private final ArrayList<Command> menu;
+    private final View view;
+    private final Presenter presenter;
 
     public Menu(View view, Presenter presenter) {
         this.view = view;

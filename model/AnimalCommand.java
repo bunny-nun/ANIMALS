@@ -1,8 +1,8 @@
 package model;
 
 public class AnimalCommand {
-    int commandID;
-    String description;
+    private int commandID;
+    private String description;
 
     public AnimalCommand(int commandID, String description) {
         this.commandID = commandID;

@@ -4,7 +4,7 @@ import java.time.LocalDate;
 
 public class PackAnimal extends Animal {
 
-    protected PackAnimalClass animalClass;
+    private PackAnimalClass animalClass;
 
     public enum PackAnimalClass {
         HORSE, CAMEL, DONKEY;
