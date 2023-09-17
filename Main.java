@@ -1,4 +1,3 @@
-import model.AnimalCommand;
 import model.service.Service;
 import presenter.Presenter;
 import view.View;

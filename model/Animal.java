@@ -53,6 +53,7 @@ public abstract class Animal {
         this.commands.addAll(commands);
     }
 
+    public abstract String getClassString();
     @Override
     public abstract String toString();
 }

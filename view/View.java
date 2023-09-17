@@ -18,9 +18,21 @@ public class View {
     public void start() {
         while (status) {
             Menu menu = new Menu(this, this.presenter);
-            System.out.println(String.format("Выберите действие:\n%s", menu.toString()));
-            int choice = this.scanner.nextInt();
-            menu.run(choice);
+            System.out.println(String.format("Выберите действие:\n%s", menu));
+            int choice = 0;
+            boolean choiceCorrect = false;
+            while (!choiceCorrect) {
+                String text = this.scanner.nextLine();
+                if (text.matches("\\d+")) {
+                    choice = Integer.parseInt(text);
+                }
+                if (choice > 0 && choice <= menu.getMenuLength()) {
+                    menu.run(choice);
+                    choiceCorrect = true;
+                } else {
+                    System.out.println("Введено некорректное значение, повторите ввод");
+                }
+            }
         }
     }
 

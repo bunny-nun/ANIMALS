@@ -28,5 +28,15 @@ public class Presenter {
         }
         System.out.println();
     }
+
+    public int getCommandListLength() {
+        return this.service.getCommandList().size();
+    }
+
+    public String create(String animalClass, String name, String birthday, int command1, int command2, int command3) {
+        this.service.add(animalClass, name, birthday, command1, command2, command3);
+        Animal animal = this.service.loadAnimal(animalClass, name, birthday);
+        return animal.toString();
+    }
 }
 

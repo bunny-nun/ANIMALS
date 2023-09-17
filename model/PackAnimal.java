@@ -35,6 +35,18 @@ public class PackAnimal extends Animal {
         this.animalClass = animalClass;
     }
 
+    public PackAnimalClass getAnimalClass() {
+        return animalClass;
+    }
+
+    public void setAnimalClass(PackAnimalClass animalClass) {
+        this.animalClass = animalClass;
+    }
+
+    public String getClassString() {
+        return animalClass.toString();
+    }
+
     @Override
     public String toString() {
         return String.format("%s %s, %s, id: %d", this.animalClass, this.name, this.birthday.toString(), this.animalID);

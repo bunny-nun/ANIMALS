@@ -16,6 +16,7 @@ public class Menu {
         this.view = view;
         this.presenter = presenter;
         this.menu = new ArrayList<>();
+        this.menu.add(new AddAnimal(this));
         this.menu.add(new ShowAllAnimals(this));
         this.menu.add(new ShowAllCommands(this));
         this.menu.add(new Exit(this));
@@ -40,5 +41,9 @@ public class Menu {
 
     public Presenter getPresenter() {
         return this.presenter;
+    }
+
+    public int getMenuLength() {
+        return this.menu.size();
     }
 }
