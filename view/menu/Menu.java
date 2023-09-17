@@ -19,7 +19,9 @@ public class Menu {
         this.menu.add(new AddAnimal(this));
         this.menu.add(new ShowAllAnimals(this));
         this.menu.add(new FindAnimal(this));
+        this.menu.add(new ShowCommands(this));
         this.menu.add(new ChangeClass(this));
+        this.menu.add(new ChangeCommands(this));
         this.menu.add(new DeleteAnimal(this));
         this.menu.add(new ShowAllCommands(this));
         this.menu.add(new Exit(this));

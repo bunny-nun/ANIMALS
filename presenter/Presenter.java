@@ -67,5 +67,27 @@ public class Presenter {
         } else return "";
     }
 
+    public String showCommands(String name, String birthday) {
+        Animal animal = this.service.find(name, birthday);
+        if (animal != null) {
+            StringBuilder commands = new StringBuilder();
+            for (AnimalCommand command : animal.getCommands()) {
+                commands.append(command.toString()).append("\n");
+            }
+            commands.append("\n");
+            return commands.toString();
+        }
+        else return "";
+    }
+
+    public String changeCommands(String name, String birthday, int command1, int command2, int command3) {
+        Animal animal = this.service.find(name, birthday);
+        if (animal != null) {
+            boolean result = this.service.changeCommands(animal, command1, command2, command3);
+            if (result) return showCommands(name, birthday);
+            else return "";
+        }
+        else return "";
+    }
 }
 
