@@ -24,4 +24,9 @@ public class AnimalCommand {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public String toString() {
+        return String.format("%d - %s", commandID, description);
+    }
 }
