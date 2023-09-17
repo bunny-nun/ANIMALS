@@ -18,7 +18,7 @@ public class View {
     public void start() {
         while (status) {
             Menu menu = new Menu(this, this.presenter);
-            System.out.println(String.format("Выберите действие:\n%s", menu));
+            System.out.printf("Выберите действие:\n%s", menu);
             int choice = 0;
             boolean choiceCorrect = false;
             while (!choiceCorrect) {

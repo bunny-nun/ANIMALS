@@ -36,8 +36,10 @@ public class Presenter {
     public String create(String animalClass, String name, String birthday, int command1, int command2, int command3) {
         this.service.add(animalClass, name, birthday, command1, command2, command3);
         Animal animal = this.service.loadAnimal(animalClass, name, birthday);
-        return animal.toString();
+        if (animal != null) return animal.toString();
+        else return "";
     }
+
     public String find(String name, String birthday) {
         Animal animal = this.service.find(name, birthday);
         if (animal != null) return animal.toString();
@@ -47,6 +49,22 @@ public class Presenter {
     public boolean delete(String name, String birthday) {
         Animal animal = this.service.find(name, birthday);
         return this.service.delete(animal);
+    }
+
+    public String changeClass(String name, String birthday, String animalClass) {
+        Animal animal = this.service.find(name, birthday);
+        if (animal != null) {
+            int command1 = animal.getCommands().get(0).getCommandID();
+            int command2 = animal.getCommands().get(1).getCommandID();
+            int command3 = animal.getCommands().get(2).getCommandID();
+            this.service.add(animalClass, name, birthday, command1, command2, command3);
+            Animal newAnimal = this.service.loadAnimal(animalClass, name, birthday);
+            if (newAnimal != null) {
+                this.service.delete(animal);
+                return newAnimal.toString();
+            }
+            else return "";
+        } else return "";
     }
 
 }

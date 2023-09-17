@@ -14,7 +14,7 @@ public class AddAnimal extends Command {
         boolean choiceCorrect = false;
         int choice = 0;
         while (!choiceCorrect) {
-            System.out.println("Выберите тип животного:");
+            System.out.println("Выберите класс животного:");
             System.out.println("""
                     1 - cat
                     2 - dog
@@ -86,7 +86,7 @@ public class AddAnimal extends Command {
             int command2 = commands.get(1);
             int command3 = commands.get(2);
             String result = this.presenter.create(animalClass, name, birthday, command1, command2, command3);
-            if (result != null) {
+            if (!result.isBlank()) {
                 System.out.printf("Животное успешно заведено:\n%s\n\n", result);
             }
         }
