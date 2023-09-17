@@ -18,6 +18,8 @@ public class Menu {
         this.menu = new ArrayList<>();
         this.menu.add(new AddAnimal(this));
         this.menu.add(new ShowAllAnimals(this));
+        this.menu.add(new FindAnimal(this));
+        this.menu.add(new DeleteAnimal(this));
         this.menu.add(new ShowAllCommands(this));
         this.menu.add(new Exit(this));
     }

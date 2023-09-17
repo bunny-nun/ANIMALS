@@ -38,5 +38,16 @@ public class Presenter {
         Animal animal = this.service.loadAnimal(animalClass, name, birthday);
         return animal.toString();
     }
+    public String find(String name, String birthday) {
+        Animal animal = this.service.find(name, birthday);
+        if (animal != null) return animal.toString();
+        else return "";
+    }
+
+    public boolean delete(String name, String birthday) {
+        Animal animal = this.service.find(name, birthday);
+        return this.service.delete(animal);
+    }
+
 }
 

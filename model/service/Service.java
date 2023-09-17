@@ -106,8 +106,7 @@ public class Service {
                 AnimalCommand animalCommand = new AnimalCommand(commandID, description);
                 this.commandList.put(commandID, animalCommand);
             }
-        } catch (
-                SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
     }
@@ -161,9 +160,36 @@ public class Service {
         try (Connection connection = DriverManager.getConnection(Config.HOST, Config.USER, Config.PASSWORD);
              Statement statement = connection.createStatement()) {
             statement.executeUpdate(query);
-        } catch (
-                SQLException e) {
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
+        }
+    }
+
+    public Animal find(String name, String birthday) {
+        Animal animal = null;
+        for (Animal result : this.animalList) {
+            if (result.getName().equals(name) && result.getBirthday().format(formatter).equals(birthday)) {
+                animal = result;
+            }
+        }
+        return animal;
+    }
+
+    public boolean delete(Animal animal) {
+        if (animal != null) {
+            String query = String.format("DELETE FROM %s WHERE animal_name = '%s' AND birthday = '%s';",
+                    animal.getClassString(), animal.getName(), animal.getBirthday().format(formatter));
+            try (Connection connection = DriverManager.getConnection(Config.HOST, Config.USER, Config.PASSWORD);
+                 Statement statement = connection.createStatement()) {
+                statement.executeUpdate(query);
+                this.animalList.remove(animal);
+                return true;
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+                return false;
+            }
+        } else {
+            return false;
         }
     }
 }
