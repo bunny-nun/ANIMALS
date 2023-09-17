@@ -2,6 +2,7 @@ package presenter;
 
 import model.Animal;
 import model.AnimalCommand;
+import model.service.Counter;
 import model.service.Service;
 import view.View;
 
@@ -88,6 +89,10 @@ public class Presenter {
             else return "";
         }
         else return "";
+    }
+
+    public int getCount() {
+        return Counter.getCount();
     }
 }
 

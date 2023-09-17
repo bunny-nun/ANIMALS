@@ -12,9 +12,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Service {
-    ArrayList<Animal> animalList;
-    HashMap<Integer, AnimalCommand> commandList;
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private final ArrayList<Animal> animalList;
+    private final HashMap<Integer, AnimalCommand> commandList;
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    private final Counter counter = new Counter();
 
     public Service() {
         this.commandList = new HashMap<>();
@@ -62,7 +63,9 @@ public class Service {
                 int command2 = resultSet.getInt("command_2");
                 int command3 = resultSet.getInt("command_3");
                 Animal animal = create(animalID, name, date, animalClass, command1, command2, command3);
-                this.animalList.add(animal);
+                if (animal != null) {
+                    this.animalList.add(animal);
+                }
             }
         } catch (SQLException e) {
             System.out.println(e.getMessage());
@@ -112,39 +115,45 @@ public class Service {
     }
 
     public Animal create(int animalID, String name, String date, String animalClass, int command1, int command2, int command3) {
-        LocalDate birthday = LocalDate.parse(date, formatter);
-        HomeAnimal.HomeAnimalClass homeAnimalClass = null;
-        PackAnimal.PackAnimalClass packAnimalClass = null;
-        switch (animalClass) {
-            case "cat":
-                homeAnimalClass = HomeAnimal.HomeAnimalClass.CAT;
-                break;
-            case "dog":
-                homeAnimalClass = HomeAnimal.HomeAnimalClass.DOG;
-                break;
-            case "hamster":
-                homeAnimalClass = HomeAnimal.HomeAnimalClass.HAMSTER;
-                break;
-            case "horse":
-                packAnimalClass = PackAnimal.PackAnimalClass.HORSE;
-                break;
-            case "camel":
-                packAnimalClass = PackAnimal.PackAnimalClass.CAMEL;
-                break;
-            case "donkey":
-                packAnimalClass = PackAnimal.PackAnimalClass.DONKEY;
-                break;
+        try (this.counter) {
+            LocalDate birthday = LocalDate.parse(date, formatter);
+            HomeAnimal.HomeAnimalClass homeAnimalClass = null;
+            PackAnimal.PackAnimalClass packAnimalClass = null;
+            switch (animalClass) {
+                case "cat":
+                    homeAnimalClass = HomeAnimal.HomeAnimalClass.CAT;
+                    break;
+                case "dog":
+                    homeAnimalClass = HomeAnimal.HomeAnimalClass.DOG;
+                    break;
+                case "hamster":
+                    homeAnimalClass = HomeAnimal.HomeAnimalClass.HAMSTER;
+                    break;
+                case "horse":
+                    packAnimalClass = PackAnimal.PackAnimalClass.HORSE;
+                    break;
+                case "camel":
+                    packAnimalClass = PackAnimal.PackAnimalClass.CAMEL;
+                    break;
+                case "donkey":
+                    packAnimalClass = PackAnimal.PackAnimalClass.DONKEY;
+                    break;
+            }
+            Animal animal;
+            if (homeAnimalClass != null) {
+                animal = new HomeAnimal(animalID, name, birthday, homeAnimalClass);
+            } else {
+                animal = new PackAnimal(animalID, name, birthday, packAnimalClass);
+            }
+            animal.addCommand(this.commandList.get(command1));
+            animal.addCommand(this.commandList.get(command2));
+            animal.addCommand(this.commandList.get(command3));
+            counter.add();
+            return animal;
+        } catch (IllegalStateException e) {
+            System.out.println(e.getMessage());
+            return null;
         }
-        Animal animal;
-        if (homeAnimalClass != null) {
-            animal = new HomeAnimal(animalID, name, birthday, homeAnimalClass);
-        } else {
-            animal = new PackAnimal(animalID, name, birthday, packAnimalClass);
-        }
-        animal.addCommand(this.commandList.get(command1));
-        animal.addCommand(this.commandList.get(command2));
-        animal.addCommand(this.commandList.get(command3));
-        return animal;
     }
 
     public void add(String animalClass, String name, String birthday, int command1, int command2, int command3) {

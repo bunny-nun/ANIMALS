@@ -24,6 +24,7 @@ public class Menu {
         this.menu.add(new ChangeCommands(this));
         this.menu.add(new DeleteAnimal(this));
         this.menu.add(new ShowAllCommands(this));
+        this.menu.add(new GetCount(this));
         this.menu.add(new Exit(this));
     }
 
