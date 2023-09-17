@@ -192,4 +192,26 @@ public class Service {
             return false;
         }
     }
+
+    public boolean changeCommands(Animal animal, int command1, int command2, int command3) {
+        if (animal != null) {
+            String query = String.format("UPDATE %s\n SET command_1 = %d, command_2 = %d, command_3 = %d\n" +
+                            "WHERE animal_name = '%s' AND birthday = '%s';", animal.getClassString(), command1, command2,
+                    command3, animal.getName(), animal.getBirthday().format(formatter));
+            try (Connection connection = DriverManager.getConnection(Config.HOST, Config.USER, Config.PASSWORD);
+                 Statement statement = connection.createStatement()) {
+                statement.executeUpdate(query);
+                animal.getCommands().clear();
+                animal.addCommand(this.commandList.get(command1));
+                animal.addCommand(this.commandList.get(command2));
+                animal.addCommand(this.commandList.get(command3));
+                return true;
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 }
