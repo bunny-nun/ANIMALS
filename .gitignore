@@ -1,5 +1,5 @@
 /ANIMALS.iml
 *.xml
 /.idea/.gitignore
-/mysql_*.jpg
-/spec_fin_project_*.jpg
+/resources/mysql_*.jpg
+/resources/spec_fin_project_*.jpg

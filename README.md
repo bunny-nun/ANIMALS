@@ -9,38 +9,38 @@
 содержимое созданного файла.
 Переименовать файл, дав ему новое имя (друзья человека).
 
-![screenshot_1](\spec_fin_project_1.jpg)
+![screenshot_1](\resources\spec_fin_project_1.jpg)
 
 2. Создать директорию, переместить файл туда.
 
-![screenshot_2](\spec_fin_project_2.jpg)
+![screenshot_2](\resources\spec_fin_project_2.jpg)
 
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого
 репозитория.
 
-![screenshot_3](\spec_fin_project_3.jpg)
-![screenshot_4](\spec_fin_project_4.jpg)
-![screenshot_5](\spec_fin_project_5.jpg)
-![screenshot_6](\spec_fin_project_6.jpg)
+![screenshot_3](\resources\spec_fin_project_3.jpg)
+![screenshot_4](\resources\spec_fin_project_4.jpg)
+![screenshot_5](\resources\spec_fin_project_5.jpg)
+![screenshot_6](\resources\spec_fin_project_6.jpg)
 
 4. Установить и удалить deb-пакет с помощью dpkg.
 
-![screenshot_7](\spec_fin_project_7.jpg)
-![screenshot_8](\spec_fin_project_8.jpg)
+![screenshot_7](\resources\spec_fin_project_7.jpg)
+![screenshot_8](\resources\spec_fin_project_8.jpg)
 
 8. Выложить историю команд в терминале ubuntu.
 
-![screenshot_9](\spec_fin_project_9.jpg)
+![screenshot_9](\resources\spec_fin_project_9.jpg)
 
 6. Нарисовать диаграмму, в которой есть класс родительский класс, домашние животные 
 и вьючные животные, в составы которых в случае домашних животных войдут классы:
 собаки, кошки, хомяки, а в класс вьючные животные войдут: лошади, верблюды и ослы.
 
-![diagram](\spec_fin_project_11.jpg)
+![diagram](\resources\spec_fin_project_11.jpg)
 
 7. В подключенном MySQL репозитории создать базу данных “Друзья человека”.
 
-![screenshot_10](\spec_fin_project_10.jpg)
+![screenshot_10](\resources\spec_fin_project_10.jpg)
 
 8. Создать таблицы с иерархией из диаграммы в БД.
 
@@ -106,10 +106,10 @@ VALUES
 ('gallop'),  
 ('carry');  
 
-![mysql_screenshot_1](\mysql_1.jpg)
-![mysql_screenshot_2](\mysql_2.jpg)
-![mysql_screenshot_3](\mysql_3.jpg)
-![mysql_screenshot_4](\mysql_4.jpg)
+![mysql_screenshot_1](\resources\mysql_1.jpg)
+![mysql_screenshot_2](\resources\mysql_2.jpg)
+![mysql_screenshot_3](\resources\mysql_3.jpg)
+![mysql_screenshot_4](\resources\mysql_4.jpg)
 
 >DROP TABLE IF EXISTS cat;  
 CREATE TABLE cat  
@@ -231,8 +231,8 @@ FOREIGN KEY (command_3) REFERENCES command (id)
 ON DELETE CASCADE ON UPDATE CASCADE  
 );
 
-![mysql_screenshot_5](\mysql_5.jpg)
-![mysql_screenshot_6](\mysql_6.jpg)
+![mysql_screenshot_5](\resources\mysql_5.jpg)
+![mysql_screenshot_6](\resources\mysql_6.jpg)
 
 9. Заполнить низкоуровневые таблицы именами (животных), командами которые они
 выполняют и датами рождения.
@@ -273,25 +273,25 @@ VALUES
 (3, 'Quinton', '2015-10-10', 1, 2, 8),    
 (3, 'Aurelius', '2023-04-02', 1, 2, 8);  
 
-![mysql_screenshot_7](\mysql_7.jpg)
-![mysql_screenshot_8](\mysql_8.jpg)
-![mysql_screenshot_9](\mysql_9.jpg)
-![mysql_screenshot_10](\mysql_10.jpg)
-![mysql_screenshot_11](\mysql_11.jpg)
-![mysql_screenshot_12](\mysql_12.jpg)
+![mysql_screenshot_7](\resources\mysql_7.jpg)
+![mysql_screenshot_8](\resources\mysql_8.jpg)
+![mysql_screenshot_9](\resources\mysql_9.jpg)
+![mysql_screenshot_10](\resources\mysql_10.jpg)
+![mysql_screenshot_11](\resources\mysql_11.jpg)
+![mysql_screenshot_12](\resources\mysql_12.jpg)
 
 10. Удалить из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник
 на зимовку. Объединить таблицы лошади и ослы в одну таблицу.
 
 >DELETE FROM pack_animal WHERE animal_class = 'camel';
 
-![mysql_screenshot_13](\mysql_13.jpg)
+![mysql_screenshot_13](\resources\mysql_13.jpg)
 
 >SELECT class_id, animal_name, birthday, command_1, command_2, command_3 FROM horse  
 UNION  
 SELECT  class_id, animal_name, birthday, command_1, command_2, command_3 FROM donkey;
 
-![mysql_screenshot_14](\mysql_14.jpg)
+![mysql_screenshot_14](\resources\mysql_14.jpg)
 
 11. Создать новую таблицу “молодые животные” в которую попадут все животные старше
 1 года, но младше 3 лет и в отдельном столбце с точностью до месяца подсчитать
@@ -324,7 +324,7 @@ MOD(TIMESTAMPDIFF(MONTH, birthday, CURDATE()), 12), ' month(s)') AS age
 FROM donkey WHERE TIMESTAMPDIFF(YEAR, birthday, CURDATE()) >= 1 AND  
 TIMESTAMPDIFF(YEAR, birthday, CURDATE()) < 3;
 
-![mysql_screenshot_15](\mysql_15.jpg)
+![mysql_screenshot_15](\resources\mysql_15.jpg)
 
 12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на прошлую
 принадлежность к старым таблицам.
@@ -371,8 +371,8 @@ LEFT JOIN command AS cc1 ON d.command_1 = cc1.id
 LEFT JOIN command AS cc2 ON d.command_2 = cc2.id  
 LEFT JOIN command AS cc3 ON d.command_3 = cc3.id;  
 
-![mysql_screenshot_16](\mysql_16.jpg)
-![mysql_screenshot_17](\mysql_17.jpg)
+![mysql_screenshot_16](\resources\mysql_16.jpg)
+![mysql_screenshot_17](\resources\mysql_17.jpg)
 
 13. Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
 14. Написать программу, имитирующую работу реестра домашних животных.
