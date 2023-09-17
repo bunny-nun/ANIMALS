@@ -148,7 +148,7 @@ public class Service {
             animal.addCommand(this.commandList.get(command1));
             animal.addCommand(this.commandList.get(command2));
             animal.addCommand(this.commandList.get(command3));
-            counter.add();
+            this.counter.add();
             return animal;
         } catch (IllegalStateException e) {
             System.out.println(e.getMessage());

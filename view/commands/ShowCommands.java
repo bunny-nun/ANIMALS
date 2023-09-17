@@ -4,7 +4,7 @@ import view.menu.Menu;
 
 public class ShowCommands extends Command {
     public ShowCommands(Menu menu) {
-        super("Посмотреть список команд, которое выполняет животное", menu);
+        super("Посмотреть список команд, которые выполняет животное", menu);
     }
 
     @Override
