@@ -13,7 +13,7 @@
 
 2. Создать директорию, переместить файл туда.
 
-![screenshot_2](\resources\spec_fin_project_2.jpg)
+![screenshot_2](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_2.jpg?raw=true)
 
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого
 репозитория.
