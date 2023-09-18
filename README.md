@@ -9,7 +9,7 @@
 содержимое созданного файла.
 Переименовать файл, дав ему новое имя (друзья человека).
 
-![screenshot_1](\resources\spec_fin_project_1.jpg)
+![screenshot_1](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_1.jpg?raw=true)
 
 2. Создать директорию, переместить файл туда.
 
