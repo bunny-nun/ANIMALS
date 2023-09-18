@@ -18,29 +18,29 @@
 3. Подключить дополнительный репозиторий MySQL. Установить любой пакет из этого
 репозитория.
 
-![screenshot_3](\resources\spec_fin_project_3.jpg)
-![screenshot_4](\resources\spec_fin_project_4.jpg)
-![screenshot_5](\resources\spec_fin_project_5.jpg)
-![screenshot_6](\resources\spec_fin_project_6.jpg)
+![screenshot_3](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_3.jpg?raw=true)
+![screenshot_4](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_4.jpg?raw=true)
+![screenshot_5](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_5.jpg?raw=true)
+![screenshot_6](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_6.jpg?raw=true)
 
 4. Установить и удалить deb-пакет с помощью dpkg.
 
-![screenshot_7](\resources\spec_fin_project_7.jpg)
-![screenshot_8](\resources\spec_fin_project_8.jpg)
+![screenshot_7](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_7.jpg?raw=true)
+![screenshot_8](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_8.jpg?raw=true)
 
 8. Выложить историю команд в терминале ubuntu.
 
-![screenshot_9](\resources\spec_fin_project_9.jpg)
+![screenshot_9](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_9.jpg?raw=true)
 
 6. Нарисовать диаграмму, в которой есть класс родительский класс, домашние животные 
 и вьючные животные, в составы которых в случае домашних животных войдут классы:
 собаки, кошки, хомяки, а в класс вьючные животные войдут: лошади, верблюды и ослы.
 
-![diagram](\resources\spec_fin_project_11.jpg)
+![diagram](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_11.jpg?raw=true)
 
 7. В подключенном MySQL репозитории создать базу данных “Друзья человека”.
 
-![screenshot_10](\resources\spec_fin_project_10.jpg)
+![screenshot_10](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_10.jpg?raw=true)
 
 8. Создать таблицы с иерархией из диаграммы в БД.
 
@@ -106,8 +106,8 @@ VALUES
 ('gallop'),  
 ('carry');  
 
-![mysql_screenshot_1](\resources\mysql_1.jpg)
-![mysql_screenshot_2](\resources\mysql_2.jpg)
+![mysql_screenshot_1](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_1.jpg?raw=true)
+![mysql_screenshot_2](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_2.jpg?raw=true)
 ![mysql_screenshot_3](\resources\mysql_3.jpg)
 ![mysql_screenshot_4](\resources\mysql_4.jpg)
 
@@ -383,7 +383,7 @@ LEFT JOIN command AS cc3 ON d.command_3 = cc3.id;
     4. Обучить животное новым командам;
     5. Реализовать навигацию по меню;
 
-    ![program_screenshot_1](\resources\spec_fin_project_12.jpg)
+    ![program_screenshot_1](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_12.jpg?raw=true)
     
     7. Создать класс Счетчик, у которого есть метод add(), увеличивающий значение
     внутренней int переменной на 1 при нажатии “Завести новое животное”.
@@ -393,8 +393,8 @@ LEFT JOIN command AS cc3 ON d.command_3 = cc3.id;
     считать в ресурсе try, если при заведении животного заполнены все поля.
 
 
-![program_screenshot_2](\resources\spec_fin_project_13.jpg)
+![program_screenshot_2](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_13.jpg?raw=true)
 
-![program_screenshot_3](\resources\spec_fin_project_14.jpg)
+![program_screenshot_3](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_14.jpg?raw=true)
 ...
-![program_screenshot_4](\resources\spec_fin_project_15.jpg)
+![program_screenshot_4](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/spec_fin_project_15.jpg?raw=true)
