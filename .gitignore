@@ -1,6 +1,4 @@
 /ANIMALS.iml
 *.xml
 /.idea/.gitignore
-/resources/mysql_*.jpg
-/resources/spec_fin_project_*.jpg
 /out/*
