@@ -108,8 +108,8 @@ VALUES
 
 ![mysql_screenshot_1](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_1.jpg?raw=true)
 ![mysql_screenshot_2](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_2.jpg?raw=true)
-![mysql_screenshot_3](\resources\mysql_3.jpg)
-![mysql_screenshot_4](\resources\mysql_4.jpg)
+![mysql_screenshot_3](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_3.jpg?raw=true)
+![mysql_screenshot_4](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_4.jpg?raw=true)
 
 >DROP TABLE IF EXISTS cat;  
 CREATE TABLE cat  
@@ -231,8 +231,8 @@ FOREIGN KEY (command_3) REFERENCES command (id)
 ON DELETE CASCADE ON UPDATE CASCADE  
 );
 
-![mysql_screenshot_5](\resources\mysql_5.jpg)
-![mysql_screenshot_6](\resources\mysql_6.jpg)
+![mysql_screenshot_5](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_5.jpg?raw=true)
+![mysql_screenshot_6](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_6.jpg?raw=true)
 
 9. Заполнить низкоуровневые таблицы именами (животных), командами которые они
 выполняют и датами рождения.
@@ -273,25 +273,25 @@ VALUES
 (3, 'Quinton', '2015-10-10', 1, 2, 8),    
 (3, 'Aurelius', '2023-04-02', 1, 2, 8);  
 
-![mysql_screenshot_7](\resources\mysql_7.jpg)
-![mysql_screenshot_8](\resources\mysql_8.jpg)
-![mysql_screenshot_9](\resources\mysql_9.jpg)
-![mysql_screenshot_10](\resources\mysql_10.jpg)
-![mysql_screenshot_11](\resources\mysql_11.jpg)
-![mysql_screenshot_12](\resources\mysql_12.jpg)
+![mysql_screenshot_7](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_7.jpg?raw=true)
+![mysql_screenshot_8](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_8.jpg?raw=true)
+![mysql_screenshot_9](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_9.jpg?raw=true)
+![mysql_screenshot_10](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_10.jpg?raw=true)
+![mysql_screenshot_11](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_11.jpg?raw=true)
+![mysql_screenshot_12](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_12.jpg?raw=true)
 
 10. Удалить из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник
 на зимовку. Объединить таблицы лошади и ослы в одну таблицу.
 
 >DELETE FROM pack_animal WHERE animal_class = 'camel';
 
-![mysql_screenshot_13](\resources\mysql_13.jpg)
+![mysql_screenshot_13](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_13.jpg?raw=true)
 
 >SELECT class_id, animal_name, birthday, command_1, command_2, command_3 FROM horse  
 UNION  
 SELECT  class_id, animal_name, birthday, command_1, command_2, command_3 FROM donkey;
 
-![mysql_screenshot_14](\resources\mysql_14.jpg)
+![mysql_screenshot_14](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_14.jpg?raw=true)
 
 11. Создать новую таблицу “молодые животные” в которую попадут все животные старше
 1 года, но младше 3 лет и в отдельном столбце с точностью до месяца подсчитать
@@ -324,7 +324,7 @@ MOD(TIMESTAMPDIFF(MONTH, birthday, CURDATE()), 12), ' month(s)') AS age
 FROM donkey WHERE TIMESTAMPDIFF(YEAR, birthday, CURDATE()) >= 1 AND  
 TIMESTAMPDIFF(YEAR, birthday, CURDATE()) < 3;
 
-![mysql_screenshot_15](\resources\mysql_15.jpg)
+![mysql_screenshot_15](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_15.jpg?raw=true)
 
 12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на прошлую
 принадлежность к старым таблицам.
@@ -371,8 +371,8 @@ LEFT JOIN command AS cc1 ON d.command_1 = cc1.id
 LEFT JOIN command AS cc2 ON d.command_2 = cc2.id  
 LEFT JOIN command AS cc3 ON d.command_3 = cc3.id;  
 
-![mysql_screenshot_16](\resources\mysql_16.jpg)
-![mysql_screenshot_17](\resources\mysql_17.jpg)
+![mysql_screenshot_16](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_16.jpg?raw=true)
+![mysql_screenshot_17](https://github.com/bunny-nun/ANIMALS/blob/branch_1/resources/mysql_17.jpg?raw=true)
 
 13. Создать класс с Инкапсуляцией методов и наследованием по диаграмме.
 14. Написать программу, имитирующую работу реестра домашних животных.
